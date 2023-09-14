@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-   stage('SonarQube analysis') {
+     stage('SonarQube analysis') {
             steps {
                 script{
                     def scannerHome = tool 'scanner-default';
@@ -27,12 +27,7 @@ pipeline {
                         sh "${scannerHome}/bin/sonar-scanner \
                             -Dsonar.projectKey=examen01 \
                             -Dsonar.projectName=examen01 \
-                            -Dsonar.sources=src/main \
-                            -Dsonar.sourceEncoding=UTF-8 \
-                            -Dsonar.language=java \
-                            -Dsonar.tests=src/test \
-                            -Dsonar.java.coveragePlugin=jacoco \
-                            -Dsonar.exclusions=**/*IT.java,**/*TEST.java,**/*Test.java,**/src/it**,**/src/test**,**/gradle/wrapper**"
+                            -Dsonar.java.libraries=target/*.jar"
                         }
                     }
                 }
