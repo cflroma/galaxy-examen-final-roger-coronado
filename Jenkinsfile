@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-         stage('SonarQube analysis') {
+      stage('SonarQube analysis') {
             steps {
                 script{
                     def scannerHome = tool 'scanner-default';
@@ -43,7 +43,7 @@ pipeline {
                     }
                 }
             }
-        }
+      
         stage('Build Image') {
             steps {
                 copyArtifacts filter: 'target/*.jar',
@@ -74,6 +74,15 @@ pipeline {
                     sh 'docker rm galaxyLabMaven -f'
                     sh 'docker run -d -p 8081:8080 --name galaxyLabMaven ${DOCKER_CREDS_USR}/msmicroservice:$BUILD_NUMBER'
                     sh 'docker logout'
+                }
+            }
+        }
+        stage('Test Run Container') {
+            steps {
+                script {
+                    sh 'docker ps'
+                    // Agrega pruebas adicionales según sea necesario
+                    // sh 'curl http://localhost:8080/your-endpoint'
                 }
             }
         }
