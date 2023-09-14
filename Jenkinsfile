@@ -32,7 +32,7 @@ pipeline {
                             -Dsonar.language=java \
                             -Dsonar.tests=src/test \
                             -Dsonar.java.coveragePlugin=jacoco \
-                            -Dsonar.exclusions=**/*IT.java,**/*TEST.java,**/*Test.java,**/src/it**,**/src/test**,**/gradle/wrapper** 
+                            -Dsonar.exclusions=**/*IT.java,**/*TEST.java,**/*Test.java,**/src/it**,**/src/test**,**/gradle/wrapper**"
                         }
                     }
                 }
