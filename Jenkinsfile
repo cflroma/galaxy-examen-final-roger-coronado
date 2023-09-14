@@ -26,8 +26,7 @@ pipeline {
                     withSonarQubeEnv('sonar-server') {
                         sh "${scannerHome}/bin/sonar-scanner \
                             -Dsonar.projectKey=examen01 \
-                            -Dsonar.projectName=examen01 \
-                            -Dsonar.java.libraries=target/*.jar"
+                            -Dsonar.projectName=examen01"
                         }
                     }
                 }
