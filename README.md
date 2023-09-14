@@ -1,2 +1,7 @@
-# galaxy-examen-final-roger-coronado
-galaxy-examen-final-roger-coronado
+
+
+```
+curl http://localhost:8080/customers
+```
+
+
