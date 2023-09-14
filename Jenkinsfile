@@ -76,14 +76,5 @@ pipeline {
                 }
             }
         }
-        stage('Test Run Container') {
-            steps {
-                script {
-                    sh 'docker ps'
-                    // Agrega pruebas adicionales según sea necesario
-                    // sh 'curl http://localhost:8080/your-endpoint'
-                }
-            }
         }
-    }
 }
