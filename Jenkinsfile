@@ -43,8 +43,8 @@ pipeline {
           def scannerHome = tool 'scanner-default'
           withSonarQubeEnv('sonar-server') {
             sh "${scannerHome}/bin/sonar-scanner \
-                            -Dsonar.projectKey=labmaven \
-                            -Dsonar.projectName=labmaven \
+                            -Dsonar.projectKey=examen01 \
+                            -Dsonar.projectName=examen01 \
                             -Dsonar.sources=src/main \
                             -Dsonar.sourceEncoding=UTF-8 \
                             -Dsonar.language=java \
