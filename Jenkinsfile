@@ -98,7 +98,7 @@ pipeline {
         script {
           sh 'docker login -u ${DOCKER_CREDS_USR} -p ${DOCKER_CREDS_PSW}'
           sh 'docker rm -f msmicroservice'
-          sh 'docker run -d --name msmicroservice -p 8080:8080 ${DOCKER_CREDS_USR}/msmicroservice:${BUILD_NUMBER}'
+        //  sh 'docker run -d --name msmicroservice -p 8080:8080 ${DOCKER_CREDS_USR}/msmicroservice:${BUILD_NUMBER}'
           sh 'docker logout'
         }
       }
